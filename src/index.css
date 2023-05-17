@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .primary-btn{
-    @apply bg-[#C1D72D] border-none 
+    @apply bg-[#C1D72D] border-none hover:bg-[#7AA93C]
 }

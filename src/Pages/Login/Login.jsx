@@ -1,14 +1,39 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/download.png'
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
+    const {signInWithGoogle,signUserWithEmailPass} = useContext(AuthContext)
     const handleLogin = (e) =>{
         e.preventDefault()
         const form = e.target;
         const email  = form.email.value;
         const pass = form.pass.value;
-        console.log(email,pass);
         
 
+        signUserWithEmailPass(email,pass)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            const message = error.message;
+            console.log(message);
+        })
+        
+
+    }
+
+    const handleGoogleSingIn =()=>{
+        signInWithGoogle()
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            const message = error.message
+            console.log(message);
+        })
     }
     return (
         <div className="py-10">
@@ -29,7 +54,7 @@ const Login = () => {
                     </form>
                         <div className="divider">OR</div>
                         <button className="btn btn-outline w-full"
-                       
+                        onClick={handleGoogleSingIn}
                         >
                             <span className="w-5 mr-10">
                                 <img src={logo} alt="" />
