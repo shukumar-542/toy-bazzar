@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.primary-btn{
+    @apply bg-[#C1D72D] border-none 
+}
