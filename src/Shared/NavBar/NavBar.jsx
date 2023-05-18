@@ -40,7 +40,7 @@ const NavBar = () => {
           <li><Link to="/addToy">Add A Toys</Link></li>
             </>
           }
-          <li><Link>Blogs</Link></li>
+          <li><Link to="/blogs">Blogs</Link></li>
           {
             user ? <button className='btn primary-btn' onClick={handleLogOut}>Logout</button> :
             <Link to="/login"><button className='btn primary-btn' >Login</button></Link>
