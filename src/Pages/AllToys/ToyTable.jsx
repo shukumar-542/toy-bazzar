@@ -1,16 +1,11 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const ToyTable = ({toy,index}) => {
     const {_id,seller,name, category,price,quantity} = toy
-    const handleToyDetails =(id)=>{
-        console.log(id);
-        fetch(`http://localhost:5000/toy/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
-    }
+   
     return (
         <tr>
         <th>{index+1}</th>
@@ -20,7 +15,7 @@ const ToyTable = ({toy,index}) => {
         <td>{price}</td>
         <td>{quantity}</td>
         <td>
-        <button className="btn primary-btn" onClick={()=>handleToyDetails(_id)}>View Details</button>
+        <Link to={`/toy/${_id}`}><button className="btn primary-btn">View Details</button></Link>
         </td>
       </tr>
     );
