@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
-const MyToyTable = ({toy,index,toys, setToys}) => {
+const MyToyTable = ({ toy, index, toys, setToys }) => {
     // eslint-disable-next-line react/prop-types
-    const {_id,seller,name, category,price,quantity} = toy;
+    const { _id, seller, name, category, price, quantity } = toy;
 
-    const handleDelete =(id)=>{
+    const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -30,9 +30,9 @@ const MyToyTable = ({toy,index,toys, setToys}) => {
                             )
                         }
                         // eslint-disable-next-line react/prop-types
-                        const remaining = toys.filter(to=> to._id !== id)
+                        const remaining = toys.filter(to => to._id !== id)
                         setToys(remaining)
-                        
+
                     })
 
             }
@@ -41,17 +41,18 @@ const MyToyTable = ({toy,index,toys, setToys}) => {
     }
     return (
         <tr>
-        <th>{index+1}</th>
-        <td>{seller}</td>
-        <td>{name}</td>
-        <td>{category}</td>
-        <td>{price}</td>
-        <td>{quantity}</td>
-        <td>
-        <Link to={`/toy/${_id}`}><button className="btn primary-btn me-2">Edit</button></Link>
-        <button className="btn btn-error" onClick={()=> handleDelete(_id)}>Delete</button>
-        </td>
-      </tr>
+            <th>{index + 1}</th>
+            <td>{seller}</td>
+            <td>{name}</td>
+            <td>{category}</td>
+            <td>{price}</td>
+            <td>{quantity}</td>
+            <td>
+                <Link to={`/update/${_id}`}><button className="btn primary-btn me-2">Edit</button></Link>
+               
+                <button className="btn btn-error" onClick={() => handleDelete(_id)}>Delete</button>
+            </td>
+        </tr>
     );
 };
 
