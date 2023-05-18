@@ -14,7 +14,7 @@ const NavBar = () => {
   }
   
   return (
-    <div className="navbar bg-base-100 lg:px-10">
+    <div className="navbar bg-base-100 lg:px-20">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -32,8 +32,8 @@ const NavBar = () => {
       </div>
       <div className="navbar-end hidden lg:flex  lg:items-center">
         <ul className=" space-x-6 menu-horizontal px-1 font-bold">
-          <li><Link>Home</Link></li>
-          <li><Link>All Toys</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/allToys">All Toys</Link></li>
           {
             user && <>
              <li><Link>My Toys</Link></li>
@@ -47,11 +47,13 @@ const NavBar = () => {
           }
         </ul>
       </div>
-      <div className="">
-        <div className="  cursor-pointer tooltip tooltip-bottom  " data-tip={user?.displayName}>
+      
+        {
+          user && <div className="  cursor-pointer tooltip tooltip-bottom  " data-tip={user?.displayName}>
           <img src={user?.photoURL} className='rounded-full w-10 h-10' />
         </div>
-      </div>
+        }
+     
     </div>
   );
 };
