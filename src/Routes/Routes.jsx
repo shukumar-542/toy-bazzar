@@ -11,6 +11,7 @@ import AllToys from "../Pages/AllToys/AllToys";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Blogs from "../Pages/Blogs/Blogs";
+import MyToys from "../Pages/MyToys/MyToys";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -45,6 +46,10 @@ import Blogs from "../Pages/Blogs/Blogs";
         {
           path : '/blogs',
           element : <Blogs></Blogs>
+        },
+        {
+          path : '/myToys',
+          element : <MyToys></MyToys>
         }
       ]
     },

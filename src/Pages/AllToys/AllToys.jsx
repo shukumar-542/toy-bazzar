@@ -55,6 +55,7 @@ const AllToys = () => {
                                 key={toy._id}
                                 index={index}
                                 toy={toy}
+                                
                             ></ToyTable>)
                         }
 
