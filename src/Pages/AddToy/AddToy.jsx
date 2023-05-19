@@ -14,13 +14,14 @@ const AddToy = () => {
         const seller = form.seller.value;
         const email= form.email.value;
         const category = form.category.value;
-        const price = form.price.value;
+        const price = parseInt(form.price.value);
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
+        // console.log(typeof price);
 
         const data = {img,name,seller,email,category,price,rating,quantity,description};
-        fetch('http://localhost:5000/addToy',{
+        fetch('https://toy-bazar-server-mauve.vercel.app/addToy',{
             method :"POST",
             headers : {"content-type" : "application/json"},
             body  :JSON.stringify(data)
@@ -50,7 +51,7 @@ const AddToy = () => {
                     </div>
                     <div className='flex p-5 gap-4'>
                         <input type="text" name="category" placeholder="Category Name" className="input w-full border-gray-400 " />
-                        <input type="text" name="price" placeholder="Enter Price" className="input w-full border-gray-400 " />
+                        <input type="number" name="price" placeholder="Enter Price" className="input w-full border-gray-400 " />
                         <input type="text" name="rating" placeholder="Rating" className="input w-full border-gray-400 " />
 
                     </div>

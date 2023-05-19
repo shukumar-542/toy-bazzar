@@ -7,7 +7,7 @@ const ToyDetails = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/toy/${id}`)
+        fetch(`https://toy-bazar-server-mauve.vercel.app/toy/${id}`)
             .then(res => res.json())
             .then(data => {
                 setToys(data);

@@ -8,12 +8,12 @@ const UpdateToy = () => {
     const handleUpdate =(e)=>{
         e.preventDefault()
         const form = e.target;
-        const price = form.toyPrice.value;
+        const price = parseInt(form.toyPrice.value);
         const quantity = form.quantity.value;
         const description = form.description.value;
         const updatedToy = {price,quantity,description};
 
-        fetch(`http://localhost:5000/update/${_id}`,{
+        fetch(`https://toy-bazar-server-mauve.vercel.app/update/${_id}`,{
             method :"PATCH",
             headers : {"content-type" : "application/json"},
             body : JSON.stringify(updatedToy)

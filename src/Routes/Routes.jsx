@@ -56,7 +56,7 @@ import PrivateRoute from "./PrivateRoute";
         {
           path : '/update/:id',
           element : <UpdateToy></UpdateToy>,
-          loader : ({params})=> fetch(`http://localhost:5000/toy/${params.id}`)
+          loader : ({params})=> fetch(`https://toy-bazar-server-mauve.vercel.app/toy/${params.id}`)
         }
       ]
     },

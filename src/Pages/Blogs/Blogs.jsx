@@ -9,14 +9,25 @@ const Blogs = () => {
                 <h1 className='text-2xl'>Q1. What is an access token and refresh token? How do they work and where should we store them on the client-side?</h1>
                 <div className=' my-5 bg-slate-100 p-5 rounded text-xl space-y-5'>
                     <p>
-                        <span className='font-bold'>uncontrolled and controlled : </span>
+                        <span className='font-bold'>Access Token: </span>
 
-                        Control component does not maintain it s internal state.and data controlled
-                        by the parent component. controlled component accept by the current value
-                        as a props.and control component has better control over the form elements and data.
-                        but Uncontrolled component maintains by it s internal component and data is
-                        controlled by the DOM. uses a ref for their current values.It has limited control
-                        over the form elements and data
+                        An access token is a credential that is issued to a user by an authentication 
+                        server upon successful authentication. It is a string of characters that 
+                        represents the user  authorization to access specific resources or perform 
+                        certain actions. The access token is usually short-lived and has an expiration
+                         time associated with it. It is typically included in the headers or parameters
+                          of API requests to prove the user identity and permissions.
+
+                    </p>
+                    <p>
+                    <span className='font-bold'>Refresh Token: </span>
+                    A refresh token is also issued by the authentication server during the 
+                    initial authentication process. Unlike the access token, the refresh token 
+                    is long-lived and has a longer expiration time. Its purpose is to obtain a 
+                    new access token without requiring the user to re-authenticate. When the access 
+                    token expires, the client can use the refresh token to request a new access token
+                     from the authentication server, which helps to maintain a seamless user experience
+                      without frequent login prompts.
                     </p>
 
 
@@ -24,12 +35,15 @@ const Blogs = () => {
                 <h1 className='text-2xl'>Q2.Compare SQL and NoSQL databases?</h1>
                 <div className='my-5 bg-slate-100 p-5 rounded text-xl'>
                     <p>
-                        <span className='font-bold'>validate React props : </span>
-                        props is a mechanism that passing read only data form parent component to
-                        child component. if we don t use the props data correctly then component not
-                        behave that we want. to more improving  our component then we need to use props validation.
-                        React components used special property PropTypes that help you to catch bugs.
-
+                        <span className='font-bold'>SQL : </span>
+                        
+                        Sql is the structured query language. sql is a good choice when working with 
+                        related data.
+                    </p>
+                    <p>
+                    <span className='font-bold'>NoSQL : </span>
+                    NoSql  database has a dynamic schema for unstructured data.NoSQL can ultimately become larger and
+                     more powerful, making these databases the preferred choice for large or ever-changing data sets.
                     </p>
                 </div>
 
@@ -37,13 +51,16 @@ const Blogs = () => {
                 <h1 className='text-2xl'> Q3. What is express js? What is Nest JS ?</h1>
                 <div className='my-5 bg-slate-100 p-5 rounded text-xl'>
                     <p>
-                        <span className='font-bold'>nodejs : </span>
-                        Node.js is an open-source, cross-platform JavaScript runtime environment.It uses the V8
-                        JavaScript engine, which is also used by the Google Chrome browser, to execute JavaScript code on the server-side.
+                        <span className='font-bold'>Express js : </span>
+                        Express.js is a popular open-source web application framework for
+                         Node.js.Express.js is a powerful and versatile web application framework for Node.js
 
-                        <span className='font-bold'>express js: </span>
+                        <span className='font-bold'>Nest js: </span>
 
-                        Express.js is a popular open-source web application framework for Node.js.Express.js is a powerful and versatile web application framework for Node.js
+                        NestJS is a popular open-source, server-side framework for building scalable
+                        and maintainable web applications using Node.js. It is inspired by Angular,
+                        which is a TypeScript-based frontend framework, and adopts many of its concepts
+                        and design patterns
 
                     </p>
                 </div>
@@ -51,10 +68,16 @@ const Blogs = () => {
                 <h1 className='text-2xl'>Q4. What is MongoDB aggregate and how does it work?</h1>
                 <div className='my-5 bg-slate-100 p-5 rounded text-xl'>
                     <p>
-                        <span className='font-bold'>Custom hook: </span>
-                        Custom hook is a special kind of function that allow to share the logic between other component.
-                        for using custom hook it can easy to share logic and it s logic is isolated. By creating a custom
-                        hook, you can abstract away the implementation details of that logic and expose a simpler, more concise API for other components to use.
+                        <span className='font-bold'>MongoDB Aggregate: </span>
+                        MongoDB aggregation refers to the process of performing data analysis operations on
+                         MongoDB collections. It allows you to process and transform data within MongoDB to 
+                         extract valuable insights, perform calculations, and generate aggregated results.
+                         --some key component that have related on mongodb aggregation:
+                         1. Collection 2.Aggregation Pipeline 3.Stages  $group, $sort, $project, $limit, and $lookup
+                         4. Operators  $group, $project, $sort, $sum, $avg, and $lookup
+                         5. Aggregation Functions, $avg, $min, $max, $count, $addToSet
+
+
 
                     </p>
                 </div>
