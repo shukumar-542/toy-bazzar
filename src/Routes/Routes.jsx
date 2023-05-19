@@ -13,6 +13,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Blogs from "../Pages/Blogs/Blogs";
 import MyToys from "../Pages/MyToys/MyToys";
 import UpdateToy from "../Pages/updateToy/UpdateToy";
+import PrivateRoute from "./PrivateRoute";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -42,7 +43,7 @@ import UpdateToy from "../Pages/updateToy/UpdateToy";
         },
         {
           path : '/toy/:id',
-          element : <ToyDetails></ToyDetails>
+          element : <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>
         },
         {
           path : '/blogs',

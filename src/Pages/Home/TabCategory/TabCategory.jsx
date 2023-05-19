@@ -9,7 +9,7 @@ const TabCategory = () => {
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
     }
-    console.log(toys);
+    // console.log(toys);
     useEffect(() => {
         fetch(`http://localhost:5000/toys/${activeTab}`)
             .then(res => res.json())
@@ -17,7 +17,7 @@ const TabCategory = () => {
                 setToys(data);
             })
     }, [activeTab])
-    console.log(activeTab);
+    // console.log(activeTab);
     return (
         <div className='max-w-7xl mx-auto my-10'>
             <Tabs>

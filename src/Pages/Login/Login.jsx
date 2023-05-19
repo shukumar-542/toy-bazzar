@@ -1,39 +1,67 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/download.png'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
-    const {signInWithGoogle,signUserWithEmailPass} = useContext(AuthContext)
-    const handleLogin = (e) =>{
+    const { signInWithGoogle, signUserWithEmailPass } = useContext(AuthContext)
+    const [error, setError] = useState('')
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/';
+    const navigate = useNavigate()
+
+
+    //    useEffect(()=>{
+    //     if(location.state.from.state == 'toy'){
+    //         toast("You have to log in first to view details");
+    //     }
+    //    },[location])
+
+
+    // console.log(location.state.from.state);
+    const handleLogin = (e) => {
         e.preventDefault()
         const form = e.target;
-        const email  = form.email.value;
+        const email = form.email.value;
         const pass = form.pass.value;
-        
 
-        signUserWithEmailPass(email,pass)
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error=>{
-            const message = error.message;
-            console.log(message);
-        })
-        
+        setError('');
+        if (!email) {
+            return setError('Enter Your Email')
+        }
+        if (!pass) {
+            return setError('Enter Password')
+        }
+
+
+        signUserWithEmailPass(email, pass)
+            .then(result => {
+                const user = result.user;
+                navigate(from)
+                console.log(user);
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+                setError(errorMessage)
+            })
+
 
     }
 
-    const handleGoogleSingIn =()=>{
+    const handleGoogleSingIn = () => {
         signInWithGoogle()
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error=>{
-            const message = error.message
-            console.log(message);
-        })
+            .then(result => {
+                const user = result.user;
+                navigate(from)
+                console.log(user);
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+                setError(errorMessage);
+            })
     }
     return (
         <div className="py-10">
@@ -52,17 +80,21 @@ const Login = () => {
 
                         <button className="btn primary-btn w-full" >Login</button>
                     </form>
-                        <div className="divider">OR</div>
-                        <button className="btn btn-outline w-full"
+                    <div className="divider">OR</div>
+                    <button className="btn btn-outline w-full"
                         onClick={handleGoogleSingIn}
-                        >
-                            <span className="w-5 mr-10">
-                                <img src={logo} alt="" />
-                            </span>
-                            Login With Google</button>
+                    >
+                        <span className="w-5 mr-10">
+                            <img src={logo} alt="" />
+                        </span>
+                        Login With Google</button>
                     <div className="mt-5">Do not have account? <span className="text-sky-600"><Link to='/register'>Register</Link></span></div>
+                    <div className='text-center my-2 text-red-500'>
+                        {error}
+                    </div>
                 </div>
             </div>
+
         </div>
     );
 };
