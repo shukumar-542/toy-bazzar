@@ -4,20 +4,21 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { useContext } from 'react';
 import { Link,} from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 
 const TabToy = ({toy}) => {
     const {_id,img,name,price,rating} = toy
-    // const {user} = useContext(AuthContext)
-    // const notify = () => toast("Toy Added successfully!");
-    // const showToster =()=>{
-    //     if(!user){
-    //         notify()
-    //     }
-    // }
+    const {user} = useContext(AuthContext)
+    const notify = () => toast("You have to log in first to view details!");
+    const showToster =()=>{
+        if(!user){
+            notify()
+            
+        }
+    }
     return (
         
             <div className="card  card-side  shadow-xl">
@@ -27,10 +28,9 @@ const TabToy = ({toy}) => {
                     <p>Price : ${price}</p>
                     <div className='flex'>Rating : <Rating style={{ maxWidth: 100 }} value={rating} readOnly /></div>
                     <div className="card-actions justify-start">
-                        <Link to={`/toy/${_id}`} state={'toy'}><button className="btn primary-btn">view Details</button></Link>
+                        <Link to={`/toy/${_id}`} onClick={showToster} state={'tabToy'} ><button className="btn primary-btn">view Details</button></Link>
                     </div>
                 </div>
-                {/* <ToastContainer></ToastContainer> */}
             </div>
        
     );

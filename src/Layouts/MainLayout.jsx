@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 const MainLayout = () => {
     const location = useLocation()
-    console.log(location);
+    // console.log(location);
 
     useEffect(()=>{
         if(location.pathname === '/'){
