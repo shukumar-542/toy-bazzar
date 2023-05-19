@@ -9,9 +9,9 @@ const Gallary = () => {
  
     return (
         <div className="container mx-auto py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
 
-                <div className="gallery-item bg-gray-900">
+                <div className="gallery-ite">
                     <img src={img1} alt="Image 1" className="w-full h-auto" />
                 </div>
 
