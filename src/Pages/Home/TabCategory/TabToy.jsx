@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 
 const TabToy = ({toy}) => {
@@ -11,7 +13,7 @@ const TabToy = ({toy}) => {
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>
                     <p>Price : ${price}</p>
-                    <p>Rating: {rating}</p>
+                    <div className='flex'>Rating : <Rating style={{ maxWidth: 100 }} value={rating} readOnly /></div>
                     <div className="card-actions justify-start">
                         <button className="btn primary-btn">view Details</button>
                     </div>

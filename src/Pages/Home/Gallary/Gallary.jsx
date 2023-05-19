@@ -1,47 +1,30 @@
-import './Gallary.css'
-import img1 from '../../../assets/engin1.jpg'
-import img2 from '../../../assets/engine2.jpg'
-import img3 from '../../../assets/engine3.jpg'
 
 
 
 const Gallary = () => {
- 
+
     return (
-        <div className="container mx-auto py-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
-
-                <div className="gallery-ite">
-                    <img src={img1} alt="Image 1" className="w-full h-auto" />
-                </div>
-
-
-                <div className="gallery-item">
-                    <img src={img2} alt="Image 2" className="w-full h-auto" />
-                    <img src="" alt="" />
-                </div>
-
-
-                <div className="gallery-item">
-                    <img src={img3} alt="Image 3" className="w-full h-auto" />
-                </div>
-
-
-                <div className="gallery-item">
-                    <img src={img1} alt="Image 4" className="w-full h-auto" />
-                </div>
-
-
-                <div className="gallery-item">
-                    <img src={img1} alt="Image 5" className="w-full h-auto" />
-                </div>
-
-
-                <div className="gallery-item">
-                    <img src={img1} alt="Image 6" className="w-full h-auto" />
-                </div>
-
+        <div className="bg-gray-200 py-10">
+            <div className="container  mx-auto space-y-2 lg:space-y-0 lg:gap-5 rounded lg:grid lg:grid-cols-3 my-10">
+            <div className="w-full bg-white  rounded hover:shadow-2xl hover:opacity-50">
+                <img src="https://i.ibb.co/v4mjCH6/robotics3.jpg" alt="image" />
             </div>
+            <div className="w-full bg-white rounded hover:opacity-50">
+                <img src="https://i.ibb.co/vqRpwRG/engine3.jpg" alt="image" />
+            </div>
+            <div className="w-full bg-white rounded hover:shadow-2xl">
+                <img src="https://i.ibb.co/pWf1nW4/robotics1.jpg" alt="image" />
+            </div>
+            <div className="w-full bg-white rounded hover:shadow-2xl">
+                <img src="https://i.ibb.co/whDhq04/engin1.jpg" alt="image" />
+            </div>
+            <div className="w-full bg-white rounded hover:shadow-2xl">
+                <img src="https://i.ibb.co/WGyJk48/robotics2.jpg" alt="image" />
+            </div>
+            <div className="w-full bg-white rounded hover:shadow-2xl">
+                <img src="https://i.ibb.co/pWf1nW4/robotics1.jpg" alt="image" />
+            </div>
+        </div>
         </div>
     );
 };

@@ -1,7 +1,7 @@
 import { FaArrowRight } from 'react-icons/fa';
 const Banner = () => {
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: `url("https://i.ibb.co/tHDgTBT/banner.webp")` }}>
+        <div className="hero min-h-screen bg-center" style={{ backgroundImage: `url("https://i.ibb.co/tHDgTBT/banner.webp")` }}>
             <div className="hero-overlay bg-opacity-40"></div>
             <div className="flex justify-end  text-neutral-content  ">
                 <div className="w-1/2">
