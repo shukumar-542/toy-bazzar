@@ -2,7 +2,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../../assets/download.png'
 import { useContext,   useState } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
-// import { toast } from 'react-toastify';
 const Login = () => {
     const { signInWithGoogle, signUserWithEmailPass } = useContext(AuthContext)
     const [error, setError] = useState('')
@@ -12,14 +11,6 @@ const Login = () => {
     const navigate = useNavigate()
 
 
-    //    useEffect(()=>{
-    //     if(location.state.from.state === 'tabToy'){
-    //         toast("You have to log in first to view details");
-    //     }
-    //    },[location])
-
-
-    // console.log(location.state.from.state);
 
     const handleLogin = (e) => {
         e.preventDefault()

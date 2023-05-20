@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile, getAuth } from 'firebase/auth';
 import app from "../../Firebase/Firebase.config";
@@ -8,10 +8,14 @@ import app from "../../Firebase/Firebase.config";
 
 const auth = getAuth(app)
 const Register = () => {
+    const { createUserWithEMail, setUser, user } = useContext(AuthContext)
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('')
 
-    const { createUserWithEMail, setUser, user } = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/';
+
     const handleRegister = (e) => {
         e.preventDefault()
         const form = e.target;
@@ -42,6 +46,7 @@ const Register = () => {
                 updateUser(name, photo)
                 setUser({ ...user, displayName: name, photoURL: photo })
                 setSuccess('user Create successfully')
+                navigate(from)
                 setError('')
                 console.log(loggedUser);
             })
