@@ -35,7 +35,7 @@ import PrivateRoute from "./PrivateRoute";
         },
         {
           path :'/addToy',
-          element : <AddToy></AddToy>
+          element : <PrivateRoute><AddToy></AddToy></PrivateRoute>
         },
         {
           path : '/allToys',
