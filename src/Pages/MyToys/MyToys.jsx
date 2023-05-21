@@ -4,8 +4,8 @@ import MyToyTable from "./MyToyTable";
 
 
 const options = [
-    { value: "ascending" },
     { value: "descending" },
+    { value: "ascending" },
 ]
 const MyToys = () => {
     const { user } = useContext(AuthContext)
