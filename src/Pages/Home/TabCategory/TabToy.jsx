@@ -21,7 +21,7 @@ const TabToy = ({toy}) => {
     }
     return (
         
-            <div className="card  card-side  shadow-xl">
+            <div className="card   card-side  shadow-xl">
                 <figure><img src={img} className="" alt="Movie" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{name}</h2>

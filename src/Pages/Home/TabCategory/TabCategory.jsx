@@ -28,7 +28,7 @@ const TabCategory = () => {
                 </TabList>
 
                 <TabPanel>
-                   <div className='grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+                   <div className='grid grid-col-1 px-5 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
                    {
                         toys.map(toy=><TabToy
                         key={toy._id}
@@ -38,7 +38,7 @@ const TabCategory = () => {
                    </div>
                 </TabPanel>
                 <TabPanel>
-                    <div className='grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+                    <div className='grid grid-col-1 px-5 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
                     {
                         toys.map(toy=><TabToy
                         key={toy._id}
@@ -48,7 +48,7 @@ const TabCategory = () => {
                     </div>
                 </TabPanel>
                 <TabPanel>
-                <div className='grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+                <div className='grid grid-col-1 px-5 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
                 {
                         toys.map(toy=><TabToy
                         key={toy._id}

@@ -11,7 +11,7 @@ const Banner = () => {
     return (
         <div className="hero min-h-screen bg-center " style={{ backgroundImage: `url("https://i.ibb.co/tHDgTBT/banner.webp")` }}>
             <div className="hero-overlay bg-opacity-40"></div>
-            <div className="flex justify-end  text-neutral-content  ">
+            <div className="flex  justify-center lg:justify-end text-neutral-content  ">
                 <div className="w-1/2" data-aos="fade-left">
                     <button className='btn btn-secondary mb-3 rounded-none'>Big Discount</button>
                     <h1 className="mb-5 text-5xl font-bold text-blue-500">Toy Bazar </h1>
