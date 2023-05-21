@@ -28,7 +28,7 @@ const TabToy = ({toy}) => {
                     <p>Price : ${price}</p>
                     <div className='flex'>Rating : <Rating style={{ maxWidth: 100 }} value={rating} readOnly /></div>
                     <div className="card-actions justify-start">
-                        <Link to={`/toy/${_id}`} onClick={showToster} state={'tabToy'} ><button className="btn primary-btn">view Details</button></Link>
+                        <Link to={`/toy/${_id}`} onClick={showToster}  state={'ToyDetails'}><button className="btn primary-btn">view Details</button></Link>
                     </div>
                 </div>
             </div>

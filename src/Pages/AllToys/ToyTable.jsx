@@ -15,7 +15,7 @@ const ToyTable = ({toy,index}) => {
         <td>{price}</td>
         <td>{quantity}</td>
         <td>
-        <Link to={`/toy/${_id}`}><button className="btn primary-btn">View Details</button></Link>
+        <Link to={`/toy/${_id}`} state={'ToyDetails'}><button className="btn primary-btn">View Details</button></Link>
         </td>
       </tr>
     );

@@ -71,7 +71,7 @@ const AddToy = () => {
                             <select
                                 id="inputState"
                                 name="category"
-                                className="form-select"
+                                className="form-select border ms-2 rounded  p-4"
                                 value={selectCategory}
                                 onChange={handleChangeSelectedValue}
                             >

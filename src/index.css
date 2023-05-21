@@ -3,5 +3,8 @@
 @tailwind utilities;
 
 .primary-btn{
-    @apply bg-[#C1D72D] border-none hover:bg-[#7AA93C]
+    @apply bg-[#C1D72D] border-none  bg-gradient-to-r from-[#C1D72D] to-[#7AA93C] py-1
+}
+.delete {
+    @apply  bg-gradient-to-r from-red-400 to-red-500 border-none
 }

@@ -15,7 +15,6 @@ const AllToys = () => {
         fetch(`https://toy-bazar-server-mauve.vercel.app/searchToy/${searchText}`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 setToys(data);
             });
     }

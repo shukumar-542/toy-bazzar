@@ -48,9 +48,9 @@ const MyToyTable = ({ toy, index, toys, setToys }) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>
-                <Link to={`/update/${_id}`}><button className="btn primary-btn me-2">Edit</button></Link>
+                <Link to={`/update/${_id}`}><button className="btn primary-btn me-2">update</button></Link>
                
-                <button className="btn btn-error" onClick={() => handleDelete(_id)}>Delete</button>
+                <button className="btn delete" onClick={() => handleDelete(_id)}>Delete</button>
             </td>
         </tr>
     );

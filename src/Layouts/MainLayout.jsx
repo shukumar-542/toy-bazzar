@@ -5,12 +5,16 @@ import { useEffect } from "react";
 
 const MainLayout = () => {
     const location = useLocation()
-    // console.log(location);
+    console.log(location.state);
 
     useEffect(()=>{
         if(location.pathname === '/'){
             document.title = `ToyBazar |  Home`
-        }else{
+        }
+        else if(location.state === 'ToyDetails'){
+            document.title = `ToyBazar | ${location.state}`
+        }
+        else{
             document.title = `ToyBazar ${location.pathname.replace("/", " | ")}`
         }
     },[location])

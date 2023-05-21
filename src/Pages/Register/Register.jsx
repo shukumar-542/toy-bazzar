@@ -44,15 +44,15 @@ const Register = () => {
             .then(result => {
                 const loggedUser = result.user
                 updateUser(name, photo)
-                setUser({ ...user, displayName: name, photoURL: photo })
+                setUser({ ...user, displayName: name, photoURL: photo,email:loggedUser.email })
                 setSuccess('user Create successfully')
                 navigate(from)
                 setError('')
-                console.log(loggedUser);
+                // console.log(loggedUser);
             })
             .catch(error => {
                 const errorMessage = error.message;
-                console.log(errorMessage);
+                // console.log(errorMessage);
                 setError(errorMessage)
             })
     }
